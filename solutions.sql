@@ -38,5 +38,30 @@ WHERE
 ;
 
 
+-- 1148. Article Views I
+-- Write a solution to find all the authors that viewed at least one of their own articles. Return the result table sorted by id in ascending order.
+SELECT
+    DISTINCT(author_id) AS id
+FROM 
+    Views
+WHERE
+    author_id = viewer_id
+ORDER BY
+    author_id ASC
+;
+
+
+-- 1683. Invalid Tweets
+-- Write a solution to find the IDs of the invalid tweets. The tweet is invalid if the number of characters used in the content of the tweet is strictly greater than 15.
+SELECT
+    tweet_id
+FROM 
+    Tweets
+WHERE
+    LENGTH(Content)>15
+;
+
+
+
 
 
