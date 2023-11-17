@@ -90,7 +90,15 @@ FROM
 ORDER BY
     p.product_name
 
--- 
+
+-- 620. Not Boring Movies
+-- Write a solution to report the movies with an odd-numbered ID and a description that is not "boring"
+SELECT *
+FROM Cinema
+WHERE
+    id%2 !=0 AND description != 'boring'
+ORDER BY
+    rating DESC
 
 
 
