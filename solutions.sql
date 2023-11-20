@@ -89,7 +89,7 @@ FROM
     s.product_id = p.product_id
 ORDER BY
     p.product_name
-
+;
 
 -- 620. Not Boring Movies
 -- Write a solution to report the movies with an odd-numbered ID and a description that is not "boring"
@@ -99,7 +99,22 @@ WHERE
     id%2 !=0 AND description != 'boring'
 ORDER BY
     rating DESC
+;
 
+
+-- 1075. Project Employees I
+-- Write an SQL query that reports the average experience years of all the employees for each project, rounded to 2 digits.
+SELECT 
+    p.project_id,
+    ROUND(AVG(e.experience_years),2) AS average_years
+
+FROM
+    Project p 
+    INNER JOIN 
+    Employee e ON
+    p.employee_id = e.employee_id
+GROUP BY 
+    p.project_id
 
 
 
